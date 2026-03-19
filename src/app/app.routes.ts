@@ -9,14 +9,15 @@ export const routes: Routes = [
         component: Login
         }
         ,
-        {
-            path:'',
-            redirectTo:'login',
-            pathMatch:'full'
-        }
-,
+                {
+                    path:'',
+                    redirectTo:'login',
+                    pathMatch:'full'
+                },
+
     {
         path:'user',
+
         loadChildren: () => import('./features/user/user.routes').then(m => m.USER_ROUTES)
     },
       {

@@ -1,17 +1,37 @@
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-4 shadow p-4 rounded bg-white">
-            <h3 class="text-center mb-4">
-                Login
-            </h3>
-            <div class="mt-5">
-                <label for="email">Email:</label>
-                <input type="email" placeholder="user@example.com" class="form-control mt-2" [(ngModel)]="email" >
-            </div>
-            <div class="mb-5 mt-3">
-        <label>password:</label>
-        <input type="password" [(ngModel)]="password" placeholder="********" class="form-control mt-2">
+<div class="login-page"> 
+    <div class="login-card shadow-lg">
+    
+    <div class="text-center mb-4">
+      <div class="logo-wrapper">
+         <i class="fa-solid fa-boxes-stacked fa-3x text-primary"></i>
       </div>
-        </div>
+      <h3 class="fw-bold mt-2">Inventory System</h3>
+      <p class="text-muted">Welcome back! Please login.</p>
     </div>
-</div>
+    <div class="justify-content-center">
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="user" placeholder="Username" [(ngModel)]="username">
+      <label for="user"><i class="fa fa-user me-2"></i>Username</label>
+    </div>
+
+    <div class="form-floating mb-4">
+      <input type="password" class="form-control" id="pass" placeholder="Password" [(ngModel)]="password">
+      <label for="pass"><i class="fa fa-lock me-2"></i>Password</label>
+    </div>
+
+    <button (click)="login()" class="btn btn-primary btn-lg w-100 shadow-sm">
+      Login
+    </button>
+      </div>
+
+    @if (errorMessage()) {
+  <div class="errorMessage small p-3 text-danger">
+    <i class="fa-solid fa-circle-xmark me-2"></i>
+    {{ errorMessage() }}
+  </div>}
+    </div>
+    </div>
+
+
+
